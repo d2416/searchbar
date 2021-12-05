@@ -1,4 +1,4 @@
-package searchbar;
+package searchbar.entity;
 
 
 public class Content {
