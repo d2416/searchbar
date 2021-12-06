@@ -25,10 +25,10 @@ public class SearchbarService {
     @Autowired
     private ContentRepository contentRepository;
 
-    public ResultDTO getMenu(SearchByEnum searchBy, String term) {
+    public ResultDTO getMenu(String searchBy, String term) {
         ResultDTO resultDTO = new ResultDTO();
 
-        if (SearchByEnum.TITLE.equals(searchBy)) {
+        if (SearchByEnum.TITLE.name().equals(searchBy.toUpperCase())) {
 
             log.info("Busqueda por titulo");
             Content contentResult = contentRepository.finContent(term);
@@ -39,7 +39,7 @@ public class SearchbarService {
                 return resultDTO;
             }
 
-        } else if (SearchByEnum.DIRECTOR.equals(searchBy)) {
+        } else if (SearchByEnum.DIRECTOR.name().equals(searchBy.toUpperCase())) {
 
             log.info("Busqueda por director");
             Directors director = directorsRepository.findDirector(term);
@@ -50,7 +50,7 @@ public class SearchbarService {
                 return resultDTO;
             }
 
-        } else if (SearchByEnum.ACTOR.equals(searchBy)) {
+        } else if (SearchByEnum.ACTOR.name().equals(searchBy.toUpperCase())) {
             log.info("Busqueda por actor");
             Actors actor = actorRepository.findActor(term);
 

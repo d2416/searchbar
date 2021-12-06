@@ -28,7 +28,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -46,6 +45,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<!-- nombre del jar -->
+<!--					<finalName>searchbar-app</finalName>-->
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

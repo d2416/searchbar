@@ -15,7 +15,7 @@ public class SearchbarController {
     private SearchbarService service;
 
     @GetMapping("/menu")
-    public ResultDTO getMenu(@RequestParam("searchby") SearchByEnum searchBy, @RequestParam String term) {
+    public ResultDTO getMenu(@RequestParam("searchby") String searchBy, @RequestParam String term) {
         return service.getMenu(searchBy, term);
     }
 

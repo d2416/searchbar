@@ -1,14 +1,13 @@
 package searchbar.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
 public class ContenidosHasActors {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private int contentId;
     private int actorId;
