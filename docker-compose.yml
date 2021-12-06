@@ -1,0 +1,26 @@
+version: '3'
+services:
+    mysql-searchbar:
+      restart: always
+      container_name: mysql-searchbar
+      image: mysql:8.0
+      environment:
+        MYSQL_ROOT_PASSWORD=123
+        MYSQL_DATABASE=searchbar_db
+        MYSQL_USER=searchbar
+        MYSQL_PASSWORD=2021
+      ports:
+        - "3306:3306"
+      expose:
+        - "3306"
+      volumes:
+        -my-db:/var/lib/mysql
+    searchbar-app:
+      restart: on-failure
+      build: ./
+      expose:
+        - "8089"
+      ports:
+        - 8089:8089
+      depends_on:
+        - mysql-searchbar

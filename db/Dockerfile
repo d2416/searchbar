@@ -1,4 +1,5 @@
-FROM mysql:5.7
+FROM mysql:8.0
+# mysql:5.7
 
 ENV MYSQL_ROOT_PASSWORD=123
 ENV MYSQL_DATABASE=searchbar_db

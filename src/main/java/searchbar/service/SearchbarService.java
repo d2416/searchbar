@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 import searchbar.ResultDTO;
 import searchbar.entity.Actors;
 import searchbar.entity.Content;
@@ -12,6 +13,9 @@ import searchbar.enumeration.SearchByEnum;
 import searchbar.repository.ActorRepository;
 import searchbar.repository.ContentRepository;
 import searchbar.repository.DirectorsRepository;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class SearchbarService {
@@ -66,5 +70,4 @@ public class SearchbarService {
 
         return resultDTO;
     }
-
 }
